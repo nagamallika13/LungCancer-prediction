@@ -1,0 +1,156 @@
+
+<!-- This is GUI for Lung Cancer Detection Application Using Machine Learning Classifer -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>ML API</title>
+
+  <style>
+    /* CSS code for button */
+    body {
+      background-color:white;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+.bc{
+font-color:white;
+font-family: "Times New Roman", Times, serif;
+}
+.heading {
+  background-color: #A52260;
+  border: solid 1px #A52260;
+  height: 200px;
+}
+.about{
+  border: solid 1px #A52260;
+}
+.login{
+ border: solid 1px #A52260;
+}
+.logop {
+  width: 20%;
+  vertical-align: middle;
+  float: left;
+  height: 100%;
+}
+
+.myTitle {
+  display: flex;
+  color: white;
+  font-size: 30px;
+  font-style: italic;
+  padding-left: 3%;
+ padding-top:1%;
+  font-family: "Times New Roman", Times, serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.left, .right {
+  width: 30%;
+}
+
+.middle {
+  width: 40%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Show Indian AI Hospital banner-->
+  
+   <header>
+    <article class="heading">
+      <h1 class="myTitle">LUNG CANCER PREDICTION</h1>
+    </article>
+  </header>
+<div class="bc">
+<article class="about">
+<p>Lung cancer is cancer that starts in the cells that make up the lungs. Many other types of cancer, such as breast or kidney, can spread (metastasize) to the lungs. When this happens, the cancer is not called lung cancer. 
+This is because cancer is named for and treatment is based on the site of the original tumor.e useful in limiting drug-induced side effects, as well as in enhancing therapeutic efficacy. 
+Therefore, nutritional intervention in BC patients may be considered an integral part of the multimodal therapeutic approach. However, further research utilizing dietary interventions in large clinical trials is required to definitively establish effective interventions in these patients, to improve long-term survival and quality of life.</p>
+ </article>
+</div>
+ <div class="login">
+    <!-- Get input for predict the cancer -->
+    <form action="{{ url_for('predict')}}"method="POST">
+<center>    
+<!-- Show predicted output using ML model --> 
+   <div>
+       
+   <h1 style="text-align:center;color:red;">{{ prediction_text }}</h1>
+</div>
+        <h1>Enter the values of features </h1>
+
+   
+ 
+Age:
+<input type="number" min="1" max="150" name="age" placeholder="mention age btw 1 to 150" required="required" /><br><br>
+Smokes:
+<input type="number" min="0" max="50" name="smokes" placeholder="smokes" required="required" /><br><br>
+AreqQ:
+<input type="number" min="0" max="50" name="areaq" placeholder="areaq" required="required" /><br><br>
+Alcohol: 
+<input type="number" min="0" max="50" name="alkhol" placeholder="alkhol" required="required" /><br><br>
+</center>
+
+</div>
+
+</div>
+<br><br><br><br>
+<center>
+        <!-- Show button -->
+        
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Cancer</strong></button></a>
+        
+        
+    </form>
+   
+  
+       </center>
+  
+
+
+</div>
+</body>
+</html>

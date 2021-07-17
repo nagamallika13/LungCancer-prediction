@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ML API</title>
+<style>
+	body{
+		background-image:url('static/image.jpeg');
+		background-repeat:no-repeat;
+		background-attachment:fixed;
+		background-size:cover;
+		}
+	.button_css{
+		color:#494949 !important;
+		text-transform:uppercase;
+		text-decoration:none;
+		background: #ffffff;
+		padding:20px;
+		border:4px solid #494949 !important;
+		display:inline-block;
+		transition:all 0.4s ease 0s;
+		}
+	..button_css:hover{
+		color:#ffffff !important;
+		background:#f6b93b;
+		border-color: #f6b93b !important;
+		transition: all 0.4s ease0s;
+		}
+</style>
+</head>
+<body>
+<div class="login">
+<center>
+<br>
+	<br>
+		<br>
+			<br>
+<form action="{{url_for('predict')}}"method="post">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Enter values of heart features</h1>
+<input type="text" name="age" placeholder="age" required="required"/>
+<input type="text" name="smokes" placeholder="smokes" required="required"/>
+<input type="text" name="areaq" placeholder="areaq" required="required"/>
+<input type="text" name="alkhol" placeholder="alkhol" required="required"/>
+
+
+<div class="button_cont" align="center"><a class="button_css" href="" target="_blank" rel="nofollow noopener">
+<button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Lung Cancer</strong></button></a>
+</div>
+</form>
+</center>
+<div>
+<center>
+<p><h1 style="color:white;">{{ prediction_text }}</h1></p>
+</center>
+</div>
+</div>
+</body>
+</html>
+
+
